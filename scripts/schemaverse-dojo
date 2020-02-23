@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+'''
+Rapid deployment tool for Schemaverse
+'''
+
+import schemaverse-dojo
+
+schemaverse-dojo.main()
