@@ -31,6 +31,8 @@ This tool can also be run as a Docker container. This assumes the player configu
 
 ```
 docker run \
+  -it \
+  --rm \
   -e CONFIG='/data/dojo.conf' \
   -e PLAYERSCONF='/data/players.conf \
   -v /var/run/docker.sock:/var/run/docker.sock \
