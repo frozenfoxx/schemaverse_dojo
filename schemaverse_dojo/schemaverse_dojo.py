@@ -1,4 +1,4 @@
-""" schemaphage-dojo core functionality """
+""" schemaphage_dojo core functionality """
 
 if __package__:
     from .prompt import Prompt

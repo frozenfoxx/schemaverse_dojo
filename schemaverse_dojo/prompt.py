@@ -18,7 +18,7 @@ class Prompt(Cmd, object):
         super(Prompt, self).__init__()
 
         self.options = Options().load_options()
-        self.players = Players(self.options["playersconf"], self.options['environment']).load_players()
+        self.players = Players(self.options['playersconf'], self.options['environment']).load_players()
         self.matches = []
 
     def do_create(self, args):
@@ -37,6 +37,12 @@ class Prompt(Cmd, object):
         self.matches.append(kumite)
 
         print("[+] Kumite created, port: " + str(kumite.port))
+
+    def do_options(self, args):
+        """ List loaded options """
+
+        for key in self.options:
+            print("  " + str(key) + ": " + str(self.options[key]))
 
     def do_players(self, args):
         """ Show all players """

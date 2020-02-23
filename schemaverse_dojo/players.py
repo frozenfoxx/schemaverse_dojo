@@ -23,10 +23,7 @@ class Players(object):
             sys.exit("Unable to read playersconf file, does it exist?")
 
         print("[+] Loading players")
-        try:
-            for key in playersconf[environment]:
-                self.players[key] = playersconf[environment][key]
-        except Exception as e:
-            sys.exit("Unable to read config file, does it exist?")
+        for key in playersconf[self.environment]:
+            self.players[key] = playersconf[self.environment][key]
 
         return self.players

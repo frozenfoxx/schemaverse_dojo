@@ -6,13 +6,11 @@ LABEL maintainer="FrozenFOXX <frozenfoxx@churchoffoxx.net>"
 
 # Variables
 WORKDIR /app
-ENV APPDIR="/app" \
-  DEPS="docker"
+ENV APPDIR="/app"
 
 # Add requirements
 COPY requirements.txt ./
 RUN \
-  apk add --no-cache ${DEPS} && \
   python3 -m pip install -r requirements.txt --no-cache-dir
 
 # Copy app source
