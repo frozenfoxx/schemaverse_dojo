@@ -3,6 +3,6 @@
 Rapid deployment tool for Schemaverse
 '''
 
-import schemaverse-dojo
+import schemaverse_dojo
 
-schemaverse-dojo.main()
+schemaverse_dojo.main()

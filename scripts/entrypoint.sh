@@ -7,4 +7,4 @@ APPDIR=${APPDIR:-"/app"}
 
 # Logic
 
-python ${APPDIR}/schemaverse-dojo/schemaverse-dojo.py $@
+python ${APPDIR}/schemaverse_dojo/schemaverse_dojo.py $@

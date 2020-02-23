@@ -15,10 +15,10 @@ class Options(object):
         """ Parse optional arguments """
 
         parser = argparse.ArgumentParser()
-        parser.add_argument("-c", "--config", dest="config", default="/etc/schemaverse-dojo/conf/dojo.conf", type=str, help="path to config file")
+        parser.add_argument("-c", "--config", dest="config", default="/etc/schemaverse_dojo/conf/dojo.conf", type=str, help="path to config file")
         parser.add_argument("-e", "--environment", dest="environment", default="DEFAULT", type=str, help="config environment")
         parser.add_argument("-g", "--gameport", dest="gameport", default="5432", type=str, help="Schemaverse game port")
-        parser.add_argument("-p", "--playersconf", dest="playersconf", default="/etc/schemaverse-dojo/conf/players.conf", type=str, help="players configuration file")
+        parser.add_argument("-p", "--playersconf", dest="playersconf", default="/etc/schemaverse_dojo/conf/players.conf", type=str, help="players configuration file")
         args = parser.parse_args()
 
         return args
