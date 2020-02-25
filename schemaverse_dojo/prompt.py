@@ -58,8 +58,8 @@ class Prompt(Cmd, object):
         """ Status of the training """
 
         for match in self.matches:
-            print("[+] Match name: " + str(match.name))
-            print("    Status: " + str(match.status))
+            print("[+] Match name: " + str(match.name()))
+            print("    Status: " + str(match.status()))
             print("    IP: " + str(match.game_server_ip))
             print("    Port: " + str(match.game_server_port))
 
