@@ -36,7 +36,9 @@ class Prompt(Cmd, object):
         kumite.load_players()
         self.matches.append(kumite)
 
-        print("[+] Kumite created, port: " + str(kumite.port))
+        print("[+] Kumite created.")
+        print("      IP: " + str(kumite.game_server_ip))
+        print("      Port: " + str(kumite.game_server_port))
 
     def do_options(self, args):
         """ List loaded options """
@@ -55,7 +57,11 @@ class Prompt(Cmd, object):
     def do_status(self, args):
         """ Status of the training """
 
-        print("[+] Status not yet implemented")
+        for match in self.matches:
+            print("[+] Match name: " + str(match.name))
+            print("    Status: " + str(match.status))
+            print("    IP: " + str(match.game_server_ip))
+            print("    Port: " + str(match.game_server_port))
 
     def do_quit(self, args):
         """ Quit the program """

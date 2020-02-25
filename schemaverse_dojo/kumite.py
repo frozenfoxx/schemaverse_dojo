@@ -6,11 +6,12 @@ class Kumite(object):
     """ A round of the game """
 
     def __init__(self, players, gameport):
-        self.players = players
         self.docker_client = docker.from_env()
         self.game_server = ""
+        self.game_server_ip = ""
+        self.game_server_port = ""
         self.game_port = gameport
-        self.port = ""
+        self.players = players
 
     def load_container(self):
         """ Loads the container """
@@ -22,8 +23,9 @@ class Kumite(object):
                                                              publish_all_ports=True
                                                             )
 
-        # Retrieve exposed port
-        self.port = self.docker_client.api.port(self.game_server.id, self.game_port)[0]['HostPort']
+        # Retrieve exposed port and IP
+        self.game_server_ip = self.docker_client.api.inspect_container(self.game_server.id)['NetworkSettings']['IPAddress']
+        self.game_server_port = self.docker_client.api.port(self.game_server.id, self.game_port)[0]['HostPort']
 
         # Check until DB is ready
         ready = False
@@ -43,6 +45,11 @@ class Kumite(object):
 
             self.game_server.exec_run(player_add)
             print("[+] Player added: " + str(i))
+
+    def name(self):
+        """ Returns the name of the container """
+
+        return self.game_server.name
 
     def shutdown(self):
         """ Kills the kumite """
