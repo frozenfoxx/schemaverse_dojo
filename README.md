@@ -1,5 +1,7 @@
 # schemaverse_dojo
 
+[![Build Status](https://cloud.drone.io/api/badges/frozenfoxx/schemaverse_dojo/status.svg?ref=refs/heads/main)](https://cloud.drone.io/frozenfoxx/schemaverse_dojo)
+
 Rapid deployment tool for [Schemaverse](https://github.com/Abstrct/Schemaverse).
 
 Docker Hub: [https://hub.docker.com/r/frozenfoxx/schemaverse_dojo](https://hub.docker.com/r/frozenfoxx/schemaverse_dojo).
